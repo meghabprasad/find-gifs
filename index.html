@@ -25,10 +25,13 @@
         </div>
         <div id = "inputDiv">
             <form>
-                <label>Enter Emotion</label>
-                <input id ="emotionInput" placeholder="Example: Happy">
+                <label for="emotion-input">Enter Emotion</label>
+                <input type="text" id ="emotion-input" placeholder="Example: Happy">
+                <!-- this button triggers new emotion to be added -->
+                <input id="add-emotion" type="submit" value="Add Emotion">
             </form>   
         </div>
+        <!-- Buttons will accumulate here -->
         <div id = "buttonsDiv">
             <div id = "emoGifsButtons">Your emoGIFs: </div>
         </div>
