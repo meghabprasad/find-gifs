@@ -1,12 +1,37 @@
 // initial array of emotions
 var emotions = ["happy", "sad", "angry"];
+console.log(emotions);
 
 // create div to dump all the gifs
-$("#buttonsDiv").append('<div class="json"></div>');
-
+//$("#buttons-view").append('<div class="json"></div>');
+var gifsDiv = $('<div class="card" style="width: 18rem">');
 function displayGifs(){
-    $(".json").empty();
+    //api call
+    $(gifsDiv).empty();
+    var emotion = $(this).attr("data-name"); //get the emotion from the data-name attribute of the button that was just clicked
+    console.log(emotion);
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=KrzIQGM9q0c0GScWZUHi8nzmRpzeINeQ"; // api queryURL
     
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
+        var results = response.data; //this is an array
+        for (var i=0; i<11; i++){
+            //var gifsDiv = $('<div class="card" style="width: 18rem">');
+            var imgTag = $('<img class="card-img-top" alt="gif">');
+            var cardBodyTag = $('<div class="card-body">');
+            var ratingTag = $('<p class="card-text">');
+            ratingTag.text("Rating: "+results[i].rating);
+            imgTag.attr("src", results[i].images.fixed_height.url);
+            $(cardBodyTag).append(ratingTag);
+            $(gifsDiv).append(cardBodyTag);
+            $(gifsDiv).append(imgTag);
+
+            $("#buttons-view").append(gifsDiv);
+        }
+    })
 }
 function renderButton(){
     $("#buttons-view").empty();//clear all the buttons
@@ -20,11 +45,14 @@ function renderButton(){
     }
 }
 //get userInput and push that to the emotions array 
-$("#add-movie").on("click", function(event) {
+$("#add-emotion").on("click", function(event) {
     event.preventDefault();
-    var emotion = $("#add-emotion").val().trim();//get value
+    var emotion = $("#emotion-input").val().trim();//get value
     emotions.push(emotion);
     //call function that rendersButton to the dom
     renderButton(); 
 });
+//when one of the buttons are clicked, execute displayGifs function
+$(document).on("click", ".emotion", displayGifs);
+renderButton();
 
