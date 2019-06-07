@@ -31,6 +31,7 @@ function displayGifs(){
             imgTag.attr("data-animate", animatedGifUrl);
             imgTag.attr("data-state", "still");
             imgTag.addClass("gif");
+            imgTag.attr("style", "width: 200px; height: 300px");
             $(cardBodyTag).append(ratingTag);
             $(gifsDiv).append(cardBodyTag);
             $(gifsDiv).append(imgTag);
