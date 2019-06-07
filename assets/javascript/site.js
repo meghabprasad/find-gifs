@@ -55,12 +55,12 @@ function renderButton(){
 }
 //get userInput and push that to the emotions array 
 
-// $("#emotion-input").keypress(function(event){
-//     console.log(event);  
-//       if(event.which==13)
-//       event.preventDefault();
-//       $('#add-emotion').click();
-// });
+$("#emotion-input").on("keypress", function(event){
+    if (event.keyCode === 13){
+        event.preventDefault();
+        $("#add-emotion").click();
+    }
+})
 $("#add-emotion").on("click", function(event) {
     event.preventDefault();
     var emotion = $("#emotion-input").val().trim();//get value

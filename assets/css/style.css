@@ -11,6 +11,7 @@ button{
     float: left;
 }
 .display-4{
+    margin-top: 20px;
     font-family: 'Russo One', cursive;
     /* font-weight: bold; */
     text-align: center;
@@ -25,6 +26,7 @@ button{
     font-family: 'Noto Sans HK', sans-serif;
     font-size: 18px;
     text-align: center;
+    color: white;
 }
 #inputDiv{
     text-align: center;
@@ -32,7 +34,18 @@ button{
 #buttons-view{
     text-align: center;
 }
-.jumbotron{
+/* .jumbotron{
     background-image: url(../images/emogifs-background.jpg);
     background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 50%;
+} */
+body{
+    background-image: url(../images/emogifs-background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-position-y: 50%; */
+}
+hr{
+    color: white;
 }
