@@ -46,7 +46,7 @@ function renderButton(){
     $("#buttons-view").empty();//clear all the buttons
     //loop through array and dynamically add button for each
     for (var i=0;i<emotions.length;i++){
-        var newButton = $("<button>"); //create button
+        var newButton = $('<button type="button" class="btn btn-primary" id = "emotion-text">'); //create button
         newButton.addClass("emotion"); //add class 
         newButton.attr("data-name", emotions[i]); //add data value
         newButton.text(emotions[i]); //name the button

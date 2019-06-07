@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Find GIFS</title>
+    <!-- link font -->
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+HK&display=swap" rel="stylesheet">
     <!-- link Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- link css -->
@@ -22,25 +26,29 @@
         <div class="jumbotron jumbotron-fluid" >
             <div class="container">
                 <h1 class="display-4">emoGIFs</h1>
-                <p class="lead">--bring your emojis to life--</p>
+                <p class="lead">bring your emojis to life</p>
             </div>
         </div>
     </div>
 </div>
-    <div class = "container">
+    <div class = "container" id = "inputContainer">
         <div class ="row" id = "inputDiv">
             <div class = "col-md-12">
             <form>
-                <label for="emotion-input">Enter Emotion</label>
+                <label for="emotion-input" id="emotion-text">Enter Emotion</label>
                 <input type="text" id ="emotion-input" placeholder="Example: Happy">
                 <!-- this button triggers new emotion to be added -->
-                <input id="add-emotion" type="submit" value="Add Emotion">
+                <input type="button" class="btn btn-primary" id="add-emotion" type="submit" value="Add Emotion">
             </form> 
             </div>  
         </div>
+    </div>    
         <!-- Buttons will accumulate here -->
+    <div class = "container" id = "buttonsContainter">
         <div id = "buttons-view"></div>
-    </div>
+    </div>    
+       
+    
 <!-- link jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- link js file -->
