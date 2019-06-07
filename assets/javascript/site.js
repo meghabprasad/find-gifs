@@ -3,11 +3,11 @@ var emotions = ["happy", "sad", "angry"];
 console.log(emotions);
 
 // create div to dump all the gifs
-//$("#buttons-view").append('<div class="json"></div>');
-var gifsDiv = $('<div class="card" style="width: 18rem">');
+// $("#buttons-view").append('<div class="json"></div>');
+var gifsContainer = $('<div>');
 function displayGifs(){
     //api call
-    $(gifsDiv).empty();
+    $(gifsContainer).empty();
     var emotion = $(this).attr("data-name"); //get the emotion from the data-name attribute of the button that was just clicked
     console.log(emotion);
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + emotion + "&api_key=KrzIQGM9q0c0GScWZUHi8nzmRpzeINeQ"; // api queryURL
@@ -18,9 +18,9 @@ function displayGifs(){
     }).then(function(response){
         console.log(response);
         var results = response.data; //this is an array
-        for (var i=0; i<11; i++){
-            //var gifsDiv = $('<div class="card" style="width: 18rem">');
-            var imgTag = $('<img class="card-img-top" alt="gif">');
+        for (var i=0; i<10; i++){
+            var gifsDiv = $('<div class="card" style="width: 200px; height: 200px">');
+            var imgTag = $('<img class="card-img-top" id="'+i+'" alt="gif">');
             var cardBodyTag = $('<div class="card-body">');
             var ratingTag = $('<p class="card-text">');
             ratingTag.text("Rating: "+results[i].rating);
@@ -28,8 +28,10 @@ function displayGifs(){
             $(cardBodyTag).append(ratingTag);
             $(gifsDiv).append(cardBodyTag);
             $(gifsDiv).append(imgTag);
+            $(gifsContainer).append(gifsDiv);
 
-            $("#buttons-view").append(gifsDiv);
+
+            $("#buttons-view").after(gifsContainer);
         }
     })
 }
@@ -55,4 +57,3 @@ $("#add-emotion").on("click", function(event) {
 //when one of the buttons are clicked, execute displayGifs function
 $(document).on("click", ".emotion", displayGifs);
 renderButton();
-

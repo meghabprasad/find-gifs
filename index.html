@@ -9,32 +9,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- link css -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
     <!-- link jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- link js file -->
-    <script src="assets/javascript/site.js"></script>
+    <!-- <script src="assets/javascript/site.js"></script> -->
     
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron jumbotron-fluid">
+    <div class="row">
+        <div class="col-md-12">
+        <div class="jumbotron jumbotron-fluid" >
             <div class="container">
                 <h1 class="display-4">emoGIFs</h1>
                 <p class="lead">--bring your emojis to life--</p>
             </div>
         </div>
-        <div id = "inputDiv">
+    </div>
+</div>
+    <div class = "container">
+        <div class ="row" id = "inputDiv">
+            <div class = "col-md-12">
             <form>
                 <label for="emotion-input">Enter Emotion</label>
                 <input type="text" id ="emotion-input" placeholder="Example: Happy">
                 <!-- this button triggers new emotion to be added -->
                 <input id="add-emotion" type="submit" value="Add Emotion">
-            </form>   
+            </form> 
+            </div>  
         </div>
         <!-- Buttons will accumulate here -->
         <div id = "buttons-view"></div>
     </div>
-    
 <!-- link jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- link js file -->
