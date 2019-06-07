@@ -24,7 +24,13 @@ function displayGifs(){
             var cardBodyTag = $('<div class="card-body">');
             var ratingTag = $('<p class="card-text">');
             ratingTag.text("Rating: "+results[i].rating);
-            imgTag.attr("src", results[i].images.fixed_height.url);
+            stillGifUrl = results[i].images.fixed_height_still.url;
+            animatedGifUrl = results[i].images.fixed_height.url;
+            imgTag.attr("src", stillGifUrl);
+            imgTag.attr("data-still", stillGifUrl);
+            imgTag.attr("data-animate", animatedGifUrl);
+            imgTag.attr("data-state", "still");
+            imgTag.addClass("gif");
             $(cardBodyTag).append(ratingTag);
             $(gifsDiv).append(cardBodyTag);
             $(gifsDiv).append(imgTag);
@@ -57,3 +63,17 @@ $("#add-emotion").on("click", function(event) {
 //when one of the buttons are clicked, execute displayGifs function
 $(document).on("click", ".emotion", displayGifs);
 renderButton();
+
+$(document).on("click", ".gif", function(){
+    var state = $(this).attr("data-state");
+    if (state === "still"){
+      var dataAnimate = $(this).attr("data-animate");
+      $(this).attr("src", dataAnimate);
+      $(this).attr("data-state", "animate");  
+    }
+    else if(state === "animate"){
+        var dataStill = $(this).attr("data-still");
+        $(this).attr("src", dataStill);
+        $(this).attr("data-state", "still");
+    }
+})
