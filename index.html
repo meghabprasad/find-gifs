@@ -31,6 +31,7 @@
         </div>
     </div>
 </div>
+
     <div class = "container" id = "inputContainer">
         <div class ="row" id = "inputDiv">
             <div class = "col-md-12">
@@ -38,16 +39,19 @@
                 <label for="emotion-input" id="emotion-text">Enter Emotion</label>
                 <input type="text" id ="emotion-input" placeholder="Example: Happy">
                 <!-- this button triggers new emotion to be added -->
-                <input type="button" class="btn btn-primary" id="add-emotion" type="submit" value="Add Emotion">
+                <input type="button" class="btn btn-success" id="add-emotion" type="submit" value="Add Emotion">
             </form> 
             </div>  
         </div>
-    </div>    
+    </div> 
+    <br>  
         <!-- Buttons will accumulate here -->
     <div class = "container" id = "buttonsContainter">
-        <div id = "buttons-view"></div>
+        <div id= "emotion-text" id="instructions">Select emotion to generate emoGIFs</div>
+        <div id= "buttons-view"></div>
+        <br>
     </div>    
-       
+ 
     
 <!-- link jquery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

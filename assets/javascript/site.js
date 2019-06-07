@@ -19,7 +19,7 @@ function displayGifs(){
         console.log(response);
         var results = response.data; //this is an array
         for (var i=0; i<10; i++){
-            var gifsDiv = $('<div class="card" style="width: 200px; height: 200px">');
+            var gifsDiv = $('<div class="card" style="width: 205px; height: 200px">');
             var imgTag = $('<img class="card-img-top" id="'+i+'" alt="gif">');
             var cardBodyTag = $('<div class="card-body">');
             var ratingTag = $('<p class="card-text">');
@@ -54,10 +54,18 @@ function renderButton(){
     }
 }
 //get userInput and push that to the emotions array 
+
+// $("#emotion-input").keypress(function(event){
+//     console.log(event);  
+//       if(event.which==13)
+//       event.preventDefault();
+//       $('#add-emotion').click();
+// });
 $("#add-emotion").on("click", function(event) {
     event.preventDefault();
     var emotion = $("#emotion-input").val().trim();//get value
     emotions.push(emotion);
+    $("#emotion-input").val("");
     //call function that rendersButton to the dom
     renderButton(); 
 });

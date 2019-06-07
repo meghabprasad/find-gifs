@@ -1,11 +1,12 @@
 button{
+    margin: 10px;
     margin-top: 20px;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .card{
     /* float: left; */
-    margin-right: 20px;
+    margin-right: 15px;
     margin-bottom: 20px;
     float: left;
 }
@@ -13,12 +14,25 @@ button{
     font-family: 'Russo One', cursive;
     /* font-weight: bold; */
     text-align: center;
+    color: white;
 }
 .lead{
     font-family: 'Special Elite', cursive;
     text-align: center;
+    color: white;
 }
 #emotion-text, #emotion-input, #add-emotion{
     font-family: 'Noto Sans HK', sans-serif;
     font-size: 18px;
+    text-align: center;
+}
+#inputDiv{
+    text-align: center;
+}
+#buttons-view{
+    text-align: center;
+}
+.jumbotron{
+    background-image: url(../images/emogifs-background.jpg);
+    background-repeat: no-repeat;
 }
