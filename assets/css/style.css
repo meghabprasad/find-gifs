@@ -49,3 +49,7 @@ body{
 hr{
     color: white;
 }
+#emotion-input{
+    border-radius: 10px;
+    height: 41px;
+}
